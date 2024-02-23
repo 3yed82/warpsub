@@ -1,10 +1,15 @@
-<?php
+$url = 'https://raw.githubusercontent.com/ippscan/ippscanTEAM/main/Montervpn';
 
-$getList = @file_get_contents('https://raw.githubusercontent.com/ippscan/ippscanTEAM/main/Montervpn');
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-if ($getList === false) {
-    die("مشکلی در بارگیری محتوا به وجود آمده است.");
+$getList = curl_exec($ch);
+
+if (curl_errno($ch)) {
+    die('Unable to fetch content from the URL: ' . curl_error($ch));
 }
+
+curl_close($ch);
 
 $strings = explode("\n", $getList);
 
