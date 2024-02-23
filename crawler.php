@@ -8,6 +8,9 @@
     $warp .= "//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=0\n";
     $warp .= "//support-url: https://github.com/3yed821\n";
     $warp .= "//profile-web-page-url: https://github.com/3yed82\n\n";
+    $warp .= "warp://162.159.192.142:946/?ifp=1-5#Warp 🇮🇷&&detour=warp://162.159.195.16:7103/?ifp=1-5#warp-main";
+    $warp .= "warp://162.159.192.154:1843/?ifp=1-5#Warp 🇮🇷&&detour=warp://162.159.192.11:7281/?ifp=1-5#warp-main";
+    $warp .= "warp://162.159.192.157:8319/?ifp=1-5#Warp 🇮🇷&&detour=warp://188.114.96.254:945/?ifp=1-5#warp-main";
 
     $i = 1;
     $pattern = '/^warp:\/\/.*$/';
