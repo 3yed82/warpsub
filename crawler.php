@@ -1,6 +1,11 @@
 <?php
 
-$getList = file_get_contents('https://raw.githubusercontent.com/ippscan/ippscanTEAM/main/Montervpn?v1.' . urlencode(time()));
+$getList = @file_get_contents('https://raw.githubusercontent.com/ippscan/ippscanTEAM/main/Montervpn');
+
+if ($getList === false) {
+    die("مشکلی در بارگیری محتوا به وجود آمده است.");
+}
+
 $strings = explode("\n", $getList);
 
 $warp = "//profile-title: base64:V0FSUCAoM1lFRPCfkqUp\n";
@@ -16,7 +21,7 @@ foreach ($strings as $val) {
     if ($i > 3) {
         break;
     }
-    if (preg_match($pattern, $val) && strpos($val, '&&detour=') === false) {
+    if (preg_match($pattern, $val) && !str_contains($val, '&&detour=')) {
         $warp .= "\n" . str_replace(['🇮🇷', '🛡', '✔️', '⭐️', '✅'], '', $val);
         $i++;
     }
