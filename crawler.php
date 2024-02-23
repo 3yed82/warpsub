@@ -9,8 +9,6 @@
     $warp .= "//support-url: https://github.com/3yed821\n";
     $warp .= "//profile-web-page-url: https://github.com/3yed82\n\n";
     $warp .= "warp://auto#🇮🇷 WARP &&detour=warp://auto#🇩🇪 WARP";
-    $warp .= "warp://162.159.192.154:1843/?ifp=1-5#🇮🇷 WARP ✔️&&detour=warp://162.159.192.11:7281/?ifp=1-5#🇩🇪 WARP";
-    $warp .= "warp://162.159.192.157:8319/?ifp=1-5#🇮🇷 WARP ✔️&&detour=warp://188.114.96.254:945/?ifp=1-5#🇩🇪 WARP";
 
     $i = 1;
     $pattern = '/^warp:\/\/.*$/';
