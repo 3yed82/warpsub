@@ -16,5 +16,4 @@
         if ( $i > 3) {
             break;
         }
-        
-    file_put_contents("export/warp", $warp);
+            file_put_contents("export/warp", $warp);
