@@ -1,6 +1,6 @@
 <?php
 
-    $getList = file_get_contents('https://raw.githubusercontent.com/ippscan/ippscanTEAM/main/Monstervpn?v1.'.time());
+    $getList = file_get_contents('https://raw.githubusercontent.com/nameless4pub/warpsub/main/export/warp?v1.'.time());
     $strings = explode("\n", $getList);
 
     $warp = "//profile-title: base64:V0FSUCAoM1lFRPCfkqUp\n";
@@ -13,7 +13,12 @@
     $i = 1;
     $pattern = '/^warp:\/\/.*$/';
     foreach ($strings as $val) {
-        if ( $i > 3) {
-            break;
-        }
-            file_put_contents("export/warp", $warp);
+    if ($i > 3) {
+        break;
+    }
+    if (preg_match($pattern, $val) && !str_contains($val, '&&detour=')) {
+        $warp .= "\n" . $val . '#🇮🇷 WARP &&' . $val . '#🇩🇪 WARP';
+        $i++;
+    }
+}
+     file_put_contents("export/warp", $warp);
