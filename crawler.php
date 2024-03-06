@@ -17,7 +17,7 @@
         break;
     }
     if (preg_match($pattern, $val) && !str_contains($val, '&&detour=')) {
-        $warp .= "\n" . $val . '#warp-ir&&' . $val . '#warp-main';
+        $warp .= "\n" . $val . '#🇮🇷 WARP&&detour=' . $val . '#🇩🇪 WARP';
         $i++;
     }
 }
