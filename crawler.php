@@ -1,13 +1,13 @@
 <?php
 
-    $getList = file_get_contents('https://raw.githubusercontent.com/nameless4pub/warpsub/main/export/warp?v1.'.time());
+    $getList = file_get_contents('https://raw.githubusercontent.com/nameless4pub/warp-ip/main/warp.json?v1.'.time());
     $strings = explode("\n", $getList);
 
-    $warp = "//profile-title: base64:V0FSUCAoM1lFRPCfkqUp\n";
-    $warp .= "//profile-update-interval: 24\n";
-    $warp .= "//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=0\n";
-    $warp .= "//support-url: https://github.com/3yed82\n";
-    $warp .= "//profile-web-page-url: https://github.com/3yed82\n\n";
+    title = "//profile-title: base64:" + base64.b64encode('3yed82⭐️'.encode('utf-8')).decode('utf-8') + "\n"
+    update_interval = "//profile-update-interval: 1\n"
+    sub_info = "//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531\n"
+    profile_web = "//profile-web-page-url: https://github.com/3yed82\n"
+    last_modified = "//last update on: " + warp_ip()[1] + "\n"
 
     $i = 1;
     $pattern = '/^warp:\/\/.*$/';
