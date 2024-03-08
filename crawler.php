@@ -32,3 +32,5 @@ foreach ($strings as $val) {
 }
 
 $warp .= "\n" . $first_ip . '#Warp 🇮🇷 IP&&detour=' . $second_ip . '#Warp 🇩🇪 IP';
+
+file_put_contents("export/warp", $warp);
