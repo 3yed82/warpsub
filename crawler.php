@@ -11,15 +11,24 @@
     $warp .= "warp://auto#🇮🇷 WARP &&detour=warp://auto#🇩🇪 WARP";
 
     $i = 1;
-    $pattern = '/^warp:\/\/.*$/';
-    foreach ($strings as $val) {
-        if ( $i > 2) {
-            break;
-        }
-        if (preg_match($pattern, $val) && !str_contains($val, '&&detour=')) {
-            $warp .= "\n" . $val . '#Warp 🇮🇷 IP&&detour=' . $val . '#Warp 🇩🇪 IP';
-            $i++;
-        }
+$pattern = '/^warp:\/\/.*$/';
+$first_ip = '';
+$second_ip = '';
+
+foreach ($strings as $val) {
+    if ($i > 2) {
+        break;
     }
 
-    file_put_contents("export/warp", $warp);
+    if (preg_match($pattern, $val) && !str_contains($val, '&&detour=')) {
+        if ($i == 1) {
+            $first_ip = $val;
+        } elseif ($i == 2) {
+            $second_ip = $val;
+        }
+
+        $i++;
+    }
+}
+
+$warp .= "\n" . $first_ip . '#Warp 🇮🇷 IP&&detour=' . $second_ip . '#Warp 🇩🇪 IP';
