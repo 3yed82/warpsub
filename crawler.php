@@ -12,7 +12,7 @@
     $i = 1;
     $pattern = '/^warp:\/\/.*$/';
     foreach ($strings as $val) {
-    if ($i > 3) {
+    if ($i > 2) {
         break;
     }
     if (preg_match($pattern, $val) && !str_contains($val, '&&detour=')) {
