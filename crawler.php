@@ -7,7 +7,7 @@
     $warp = "//profile-update-interval: 1\n"
     $warp = "//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531\n"
     $warp = "//profile-web-page-url: https://github.com/3yed82\n"
-    $warp = "//last update on: " + warp_ip()[1] + "\n"
+    $warp .= "warp://auto#🇮🇷 WARP &&detour=warp://auto#🇩🇪 WARP
 
     $i = 1;
     $pattern = '/^warp:\/\/.*$/';
